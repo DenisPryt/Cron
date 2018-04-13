@@ -24,6 +24,7 @@ Supports non-standard characters '/', 'L', '#'. (https://en.wikipedia.org/wiki/C
 ```
 Field name   | Allowed values  | Allowed special characters
 ------------------------------------------------------------
+Seconds      | 0-59            | * , - /
 Minutes      | 0-59            | * , - /
 Hours        | 0-23            | * , - /
 Day of month | 1-31            | * , - / ? L
