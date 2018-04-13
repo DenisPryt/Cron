@@ -29,7 +29,7 @@ Minutes      | 0-59            | * , - /
 Hours        | 0-23            | * , - /
 Day of month | 1-31            | * , - / ? L
 Month        | 1-12 or JAN-DEC | * , - /
-Day of week  | 0-6 or SUN-SAT  | * , - / ? L #
+Day of week  | 0-7 or SUN-SAT  | * , - / ? L #
 ```
 
 **Examples expressions**
