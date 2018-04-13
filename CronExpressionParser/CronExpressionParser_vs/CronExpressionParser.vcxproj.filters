@@ -15,36 +15,36 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\include\Cron.h">
+    <ClInclude Include="..\include\Cron.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\CronExpression.h">
+    <ClInclude Include="..\include\CronExpression.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\CronParserPrivate.h">
+    <ClInclude Include="..\include\CronParserPrivate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\CronSheduleMasks.h">
+    <ClInclude Include="..\include\CronSheduleMasks.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\CronSpecialSymbols.h">
+    <ClInclude Include="..\include\CronSpecialSymbols.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\CronTimeCalculatorPrivate.h">
+    <ClInclude Include="..\include\CronTimeCalculatorPrivate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\CronTimeCalculatorPrivate.cpp">
+    <ClCompile Include="..\src\CronTimeCalculatorPrivate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\CronSpecialSymbols.cpp">
+    <ClCompile Include="..\src\CronSpecialSymbols.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\CronParserPrivate.cpp">
+    <ClCompile Include="..\src\CronParserPrivate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\CronExpression.cpp">
+    <ClCompile Include="..\src\CronExpression.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
