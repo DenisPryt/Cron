@@ -7,7 +7,7 @@ Supports cron expressions with seconds.
 
 Supports non-standard characters '/', 'L', '#'. (https://en.wikipedia.org/wiki/Cron#Non-Standard_Characters)
 
-Usage example
+**Usage example**
 -------------
 
     #include <Cron.h>
@@ -18,7 +18,20 @@ Usage example
     Expression expr = Expression::ParseCronExpression(3/15 3-40/8 5-9 * * 4L);
     system_clock::time_point nextTime = expr.NextTime(system_clock::now());
 
-Examples expressions
+**Support for the following cron expressions:**
+-------------
+
+```
+Field name   | Allowed values  | Allowed special characters
+------------------------------------------------------------
+Minutes      | 0-59            | * , - /
+Hours        | 0-23            | * , - /
+Day of month | 1-31            | * , - / ? L
+Month        | 1-12 or JAN-DEC | * , - /
+Day of week  | 0-6 or SUN-SAT  | * , - / ? L #
+```
+
+**Examples expressions**
 --------------------
 
 Expression, input date, next date:
