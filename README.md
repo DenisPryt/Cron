@@ -1,4 +1,4 @@
-Cron expression parsing in modern C++ usind chrono and date libraries
+Cron expression parsing in modern C++ using chrono and date libraries
 ===================================================================
 
 Given a cron expression and a date, you can get the next date which satisfies the cron expression.
