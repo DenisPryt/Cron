@@ -3,9 +3,9 @@
 #include "CronSheduleMasks.h"
 #include "CronSpecialSymbols.h"
 
+#include <string_view>
 #include <array>
 #include <vector>
-#include <string_view>
 
 
 namespace Cron

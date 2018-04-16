@@ -50,7 +50,8 @@ void ReplaceToPosition(std::string& field, const Names_t& names)
 template<class StringOut_t, class StringIn_t>
 void SplitString(std::vector<StringOut_t>& res, const StringIn_t& strIn, const string_view& token)
 {
-	using CategoryIn_t = typename std::iterator_traits<StringIn_t::iterator>::iterator_category;
+    using It_t = typename StringIn_t::iterator;
+	using CategoryIn_t = typename std::iterator_traits<It_t>::iterator_category;
 	static_assert(std::is_same_v<CategoryIn_t, std::random_access_iterator_tag>, "string iterator must be random access");
 
 	res.clear();
@@ -268,7 +269,7 @@ uint32_t ParserPrivate::ReadNumber(string_view& str)
 	}
 
 	char* nextSymbol = nullptr;
-	uint32_t num = std::strtoul(str.data(), &nextSymbol, 10);
+	uint32_t num = (uint32_t)std::strtoul(str.data(), &nextSymbol, 10);
 
 	if (nextSymbol == str)
 		throw std::runtime_error("Cron parse error: not a number or L");

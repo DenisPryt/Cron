@@ -1,6 +1,7 @@
 #include "CronSpecialSymbols.h"
 
 #include <cctype>
+#include <stdexcept>
 
 
 namespace Cron
@@ -51,6 +52,12 @@ void SpecialSymbols::ThrowIfInvalid(const SpecialData& spec)
 			throw std::runtime_error("Cron parser error: number after / must be greater then 0");
 
 		break;
+            
+    case None:
+    case L:
+    case W:
+    case LW:
+            break;
 	}
 }
 

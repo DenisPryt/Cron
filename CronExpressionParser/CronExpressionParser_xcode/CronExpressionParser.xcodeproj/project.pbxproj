@@ -1,0 +1,461 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		047349232083D75F005AF2E3 /* Cron.h in Headers */ = {isa = PBXBuildFile; fileRef = 0473491D2083D75F005AF2E3 /* Cron.h */; };
+		047349242083D75F005AF2E3 /* CronExpression.h in Headers */ = {isa = PBXBuildFile; fileRef = 0473491E2083D75F005AF2E3 /* CronExpression.h */; };
+		047349252083D75F005AF2E3 /* CronParserPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 0473491F2083D75F005AF2E3 /* CronParserPrivate.h */; };
+		047349262083D75F005AF2E3 /* CronSheduleMasks.h in Headers */ = {isa = PBXBuildFile; fileRef = 047349202083D75F005AF2E3 /* CronSheduleMasks.h */; };
+		047349272083D75F005AF2E3 /* CronSpecialSymbols.h in Headers */ = {isa = PBXBuildFile; fileRef = 047349212083D75F005AF2E3 /* CronSpecialSymbols.h */; };
+		047349282083D75F005AF2E3 /* CronTimeCalculatorPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 047349222083D75F005AF2E3 /* CronTimeCalculatorPrivate.h */; };
+		0473492E2083D77D005AF2E3 /* CronExpression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0473492A2083D77D005AF2E3 /* CronExpression.cpp */; };
+		0473492F2083D77D005AF2E3 /* CronParserPrivate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0473492B2083D77D005AF2E3 /* CronParserPrivate.cpp */; };
+		047349302083D77D005AF2E3 /* CronSpecialSymbols.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0473492C2083D77D005AF2E3 /* CronSpecialSymbols.cpp */; };
+		047349312083D77D005AF2E3 /* CronTimeCalculatorPrivate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0473492D2083D77D005AF2E3 /* CronTimeCalculatorPrivate.cpp */; };
+		04B2B459208521F600AFE0BE /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04B2B458208521F600AFE0BE /* test.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		04B2B44F208521BD00AFE0BE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0473490E2083D6FC005AF2E3 /* libCronExpressionParser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCronExpressionParser.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0473491D2083D75F005AF2E3 /* Cron.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Cron.h; path = ../../include/Cron.h; sourceTree = "<group>"; };
+		0473491E2083D75F005AF2E3 /* CronExpression.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CronExpression.h; path = ../../include/CronExpression.h; sourceTree = "<group>"; };
+		0473491F2083D75F005AF2E3 /* CronParserPrivate.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CronParserPrivate.h; path = ../../include/CronParserPrivate.h; sourceTree = "<group>"; };
+		047349202083D75F005AF2E3 /* CronSheduleMasks.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CronSheduleMasks.h; path = ../../include/CronSheduleMasks.h; sourceTree = "<group>"; };
+		047349212083D75F005AF2E3 /* CronSpecialSymbols.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CronSpecialSymbols.h; path = ../../include/CronSpecialSymbols.h; sourceTree = "<group>"; };
+		047349222083D75F005AF2E3 /* CronTimeCalculatorPrivate.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CronTimeCalculatorPrivate.h; path = ../../include/CronTimeCalculatorPrivate.h; sourceTree = "<group>"; };
+		0473492A2083D77D005AF2E3 /* CronExpression.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CronExpression.cpp; path = ../../src/CronExpression.cpp; sourceTree = "<group>"; };
+		0473492B2083D77D005AF2E3 /* CronParserPrivate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CronParserPrivate.cpp; path = ../../src/CronParserPrivate.cpp; sourceTree = "<group>"; };
+		0473492C2083D77D005AF2E3 /* CronSpecialSymbols.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CronSpecialSymbols.cpp; path = ../../src/CronSpecialSymbols.cpp; sourceTree = "<group>"; };
+		0473492D2083D77D005AF2E3 /* CronTimeCalculatorPrivate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CronTimeCalculatorPrivate.cpp; path = ../../src/CronTimeCalculatorPrivate.cpp; sourceTree = "<group>"; };
+		04B2B451208521BD00AFE0BE /* CronExpressionParserTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CronExpressionParserTest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04B2B458208521F600AFE0BE /* test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = test.cpp; path = ../../test/test.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0473490B2083D6FC005AF2E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04B2B44E208521BD00AFE0BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		047349052083D6FC005AF2E3 = {
+			isa = PBXGroup;
+			children = (
+				047349102083D6FC005AF2E3 /* CronExpressionParser */,
+				04B2B452208521BD00AFE0BE /* CronExpressionParserTest */,
+				0473490F2083D6FC005AF2E3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0473490F2083D6FC005AF2E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0473490E2083D6FC005AF2E3 /* libCronExpressionParser.a */,
+				04B2B451208521BD00AFE0BE /* CronExpressionParserTest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		047349102083D6FC005AF2E3 /* CronExpressionParser */ = {
+			isa = PBXGroup;
+			children = (
+				047349292083D76F005AF2E3 /* sources */,
+				0473491C2083D73F005AF2E3 /* headers */,
+			);
+			path = CronExpressionParser;
+			sourceTree = "<group>";
+		};
+		0473491C2083D73F005AF2E3 /* headers */ = {
+			isa = PBXGroup;
+			children = (
+				0473491D2083D75F005AF2E3 /* Cron.h */,
+				0473491E2083D75F005AF2E3 /* CronExpression.h */,
+				0473491F2083D75F005AF2E3 /* CronParserPrivate.h */,
+				047349202083D75F005AF2E3 /* CronSheduleMasks.h */,
+				047349212083D75F005AF2E3 /* CronSpecialSymbols.h */,
+				047349222083D75F005AF2E3 /* CronTimeCalculatorPrivate.h */,
+			);
+			name = headers;
+			sourceTree = "<group>";
+		};
+		047349292083D76F005AF2E3 /* sources */ = {
+			isa = PBXGroup;
+			children = (
+				0473492A2083D77D005AF2E3 /* CronExpression.cpp */,
+				0473492B2083D77D005AF2E3 /* CronParserPrivate.cpp */,
+				0473492C2083D77D005AF2E3 /* CronSpecialSymbols.cpp */,
+				0473492D2083D77D005AF2E3 /* CronTimeCalculatorPrivate.cpp */,
+			);
+			name = sources;
+			sourceTree = "<group>";
+		};
+		04B2B452208521BD00AFE0BE /* CronExpressionParserTest */ = {
+			isa = PBXGroup;
+			children = (
+				04B2B458208521F600AFE0BE /* test.cpp */,
+			);
+			path = CronExpressionParserTest;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0473490C2083D6FC005AF2E3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				047349272083D75F005AF2E3 /* CronSpecialSymbols.h in Headers */,
+				047349242083D75F005AF2E3 /* CronExpression.h in Headers */,
+				047349252083D75F005AF2E3 /* CronParserPrivate.h in Headers */,
+				047349282083D75F005AF2E3 /* CronTimeCalculatorPrivate.h in Headers */,
+				047349232083D75F005AF2E3 /* Cron.h in Headers */,
+				047349262083D75F005AF2E3 /* CronSheduleMasks.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0473490D2083D6FC005AF2E3 /* CronExpressionParser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 047349192083D6FC005AF2E3 /* Build configuration list for PBXNativeTarget "CronExpressionParser" */;
+			buildPhases = (
+				0473490A2083D6FC005AF2E3 /* Sources */,
+				0473490B2083D6FC005AF2E3 /* Frameworks */,
+				0473490C2083D6FC005AF2E3 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CronExpressionParser;
+			productName = CronExpressionParser;
+			productReference = 0473490E2083D6FC005AF2E3 /* libCronExpressionParser.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		04B2B450208521BD00AFE0BE /* CronExpressionParserTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04B2B455208521BD00AFE0BE /* Build configuration list for PBXNativeTarget "CronExpressionParserTest" */;
+			buildPhases = (
+				04B2B44D208521BD00AFE0BE /* Sources */,
+				04B2B44E208521BD00AFE0BE /* Frameworks */,
+				04B2B44F208521BD00AFE0BE /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CronExpressionParserTest;
+			productName = CronExpressionParserTest;
+			productReference = 04B2B451208521BD00AFE0BE /* CronExpressionParserTest */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		047349062083D6FC005AF2E3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = Prychkovsky;
+				TargetAttributes = {
+					0473490D2083D6FC005AF2E3 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					04B2B450208521BD00AFE0BE = {
+						CreatedOnToolsVersion = 9.3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 047349092083D6FC005AF2E3 /* Build configuration list for PBXProject "CronExpressionParser" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 047349052083D6FC005AF2E3;
+			productRefGroup = 0473490F2083D6FC005AF2E3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0473490D2083D6FC005AF2E3 /* CronExpressionParser */,
+				04B2B450208521BD00AFE0BE /* CronExpressionParserTest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0473490A2083D6FC005AF2E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				047349312083D77D005AF2E3 /* CronTimeCalculatorPrivate.cpp in Sources */,
+				047349302083D77D005AF2E3 /* CronSpecialSymbols.cpp in Sources */,
+				0473492F2083D77D005AF2E3 /* CronParserPrivate.cpp in Sources */,
+				0473492E2083D77D005AF2E3 /* CronExpression.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04B2B44D208521BD00AFE0BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04B2B459208521F600AFE0BE /* test.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		047349172083D6FC005AF2E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = c11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = ../../date/include/;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-std=c++1z",
+				);
+				OTHER_LDFLAGS = "-std=c++17";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		047349182083D6FC005AF2E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = c11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = ../../date/include/;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-std=c++1z",
+				);
+				OTHER_LDFLAGS = "-std=c++17";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		0473491A2083D6FC005AF2E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRINGS_FILE_OUTPUT_ENCODING = "UTF-16";
+			};
+			name = Debug;
+		};
+		0473491B2083D6FC005AF2E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = lib;
+				GCC_ENABLE_CPP_EXCEPTIONS = YES;
+				GCC_ENABLE_CPP_RTTI = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRINGS_FILE_OUTPUT_ENCODING = "UTF-16";
+			};
+			name = Release;
+		};
+		04B2B456208521BD00AFE0BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = c11;
+				HEADER_SEARCH_PATHS = (
+					../../date/include/,
+					../include/,
+				);
+				LIBRARY_SEARCH_PATHS = Build/Debug;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				OTHER_LDFLAGS = (
+					"-std=c++17",
+					"-lCronExpressionParser",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRINGS_FILE_OUTPUT_ENCODING = "UTF-16";
+			};
+			name = Debug;
+		};
+		04B2B457208521BD00AFE0BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "compiler-default";
+				CLANG_CXX_LIBRARY = "compiler-default";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_C_LANGUAGE_STANDARD = c11;
+				HEADER_SEARCH_PATHS = (
+					../../date/include/,
+					../include/,
+				);
+				LIBRARY_SEARCH_PATHS = Build/Release;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				OTHER_LDFLAGS = (
+					"-std=c++17",
+					"-lCronExpressionParser",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRINGS_FILE_OUTPUT_ENCODING = "UTF-16";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		047349092083D6FC005AF2E3 /* Build configuration list for PBXProject "CronExpressionParser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				047349172083D6FC005AF2E3 /* Debug */,
+				047349182083D6FC005AF2E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		047349192083D6FC005AF2E3 /* Build configuration list for PBXNativeTarget "CronExpressionParser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0473491A2083D6FC005AF2E3 /* Debug */,
+				0473491B2083D6FC005AF2E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04B2B455208521BD00AFE0BE /* Build configuration list for PBXNativeTarget "CronExpressionParserTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04B2B456208521BD00AFE0BE /* Debug */,
+				04B2B457208521BD00AFE0BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 047349062083D6FC005AF2E3 /* Project object */;
+}
