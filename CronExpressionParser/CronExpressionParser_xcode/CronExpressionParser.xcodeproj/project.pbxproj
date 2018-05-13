@@ -17,7 +17,7 @@
 		0473492F2083D77D005AF2E3 /* CronParserPrivate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0473492B2083D77D005AF2E3 /* CronParserPrivate.cpp */; };
 		047349302083D77D005AF2E3 /* CronSpecialSymbols.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0473492C2083D77D005AF2E3 /* CronSpecialSymbols.cpp */; };
 		047349312083D77D005AF2E3 /* CronTimeCalculatorPrivate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 0473492D2083D77D005AF2E3 /* CronTimeCalculatorPrivate.cpp */; };
-		04B2B459208521F600AFE0BE /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04B2B458208521F600AFE0BE /* test.cpp */; };
+		04DE2A6720A8CBCB00725488 /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 04DE2A6620A8CBCB00725488 /* test.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,18 +34,18 @@
 
 /* Begin PBXFileReference section */
 		0473490E2083D6FC005AF2E3 /* libCronExpressionParser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCronExpressionParser.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		0473491D2083D75F005AF2E3 /* Cron.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Cron.h; path = ../../include/Cron.h; sourceTree = "<group>"; };
-		0473491E2083D75F005AF2E3 /* CronExpression.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CronExpression.h; path = ../../include/CronExpression.h; sourceTree = "<group>"; };
-		0473491F2083D75F005AF2E3 /* CronParserPrivate.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CronParserPrivate.h; path = ../../include/CronParserPrivate.h; sourceTree = "<group>"; };
-		047349202083D75F005AF2E3 /* CronSheduleMasks.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CronSheduleMasks.h; path = ../../include/CronSheduleMasks.h; sourceTree = "<group>"; };
-		047349212083D75F005AF2E3 /* CronSpecialSymbols.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CronSpecialSymbols.h; path = ../../include/CronSpecialSymbols.h; sourceTree = "<group>"; };
-		047349222083D75F005AF2E3 /* CronTimeCalculatorPrivate.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CronTimeCalculatorPrivate.h; path = ../../include/CronTimeCalculatorPrivate.h; sourceTree = "<group>"; };
-		0473492A2083D77D005AF2E3 /* CronExpression.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CronExpression.cpp; path = ../../src/CronExpression.cpp; sourceTree = "<group>"; };
-		0473492B2083D77D005AF2E3 /* CronParserPrivate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CronParserPrivate.cpp; path = ../../src/CronParserPrivate.cpp; sourceTree = "<group>"; };
-		0473492C2083D77D005AF2E3 /* CronSpecialSymbols.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CronSpecialSymbols.cpp; path = ../../src/CronSpecialSymbols.cpp; sourceTree = "<group>"; };
-		0473492D2083D77D005AF2E3 /* CronTimeCalculatorPrivate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CronTimeCalculatorPrivate.cpp; path = ../../src/CronTimeCalculatorPrivate.cpp; sourceTree = "<group>"; };
+		0473491D2083D75F005AF2E3 /* Cron.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = Cron.h; path = ../include/Cron.h; sourceTree = "<group>"; };
+		0473491E2083D75F005AF2E3 /* CronExpression.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CronExpression.h; path = ../include/CronExpression.h; sourceTree = "<group>"; };
+		0473491F2083D75F005AF2E3 /* CronParserPrivate.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CronParserPrivate.h; path = ../include/CronParserPrivate.h; sourceTree = "<group>"; };
+		047349202083D75F005AF2E3 /* CronSheduleMasks.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CronSheduleMasks.h; path = ../include/CronSheduleMasks.h; sourceTree = "<group>"; };
+		047349212083D75F005AF2E3 /* CronSpecialSymbols.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CronSpecialSymbols.h; path = ../include/CronSpecialSymbols.h; sourceTree = "<group>"; };
+		047349222083D75F005AF2E3 /* CronTimeCalculatorPrivate.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; name = CronTimeCalculatorPrivate.h; path = ../include/CronTimeCalculatorPrivate.h; sourceTree = "<group>"; };
+		0473492A2083D77D005AF2E3 /* CronExpression.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CronExpression.cpp; path = ../src/CronExpression.cpp; sourceTree = "<group>"; };
+		0473492B2083D77D005AF2E3 /* CronParserPrivate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CronParserPrivate.cpp; path = ../src/CronParserPrivate.cpp; sourceTree = "<group>"; };
+		0473492C2083D77D005AF2E3 /* CronSpecialSymbols.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CronSpecialSymbols.cpp; path = ../src/CronSpecialSymbols.cpp; sourceTree = "<group>"; };
+		0473492D2083D77D005AF2E3 /* CronTimeCalculatorPrivate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CronTimeCalculatorPrivate.cpp; path = ../src/CronTimeCalculatorPrivate.cpp; sourceTree = "<group>"; };
 		04B2B451208521BD00AFE0BE /* CronExpressionParserTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CronExpressionParserTest; sourceTree = BUILT_PRODUCTS_DIR; };
-		04B2B458208521F600AFE0BE /* test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = test.cpp; path = ../../test/test.cpp; sourceTree = "<group>"; };
+		04DE2A6620A8CBCB00725488 /* test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +90,7 @@
 				047349292083D76F005AF2E3 /* sources */,
 				0473491C2083D73F005AF2E3 /* headers */,
 			);
-			path = CronExpressionParser;
+			name = CronExpressionParser;
 			sourceTree = "<group>";
 		};
 		0473491C2083D73F005AF2E3 /* headers */ = {
@@ -120,9 +120,10 @@
 		04B2B452208521BD00AFE0BE /* CronExpressionParserTest */ = {
 			isa = PBXGroup;
 			children = (
-				04B2B458208521F600AFE0BE /* test.cpp */,
+				04DE2A6620A8CBCB00725488 /* test.cpp */,
 			);
-			path = CronExpressionParserTest;
+			name = CronExpressionParserTest;
+			path = ../test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +232,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04B2B459208521F600AFE0BE /* test.cpp in Sources */,
+				04DE2A6720A8CBCB00725488 /* test.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,12 +27,16 @@ public:
 	explicit TimeCalculator(SheduleMasks& sheduleMasksRef);
 
 	sys_time_t Next(const sys_time_t& from);
-	//sys_time_t Prev(const sys_time_t& from);
+	sys_time_t Prev(const sys_time_t& from);
 
 	
 	time_of_day_sec NextTimeOfDay(time_of_day_sec tod);
-	year_month_day NextMonth(year_month_day ymd);
-	year_month_day NextDay(year_month_day ymd);
+    year_month_day NextMonth(year_month_day ymd);
+    
+    time_of_day_sec PrevTimeOfDay(time_of_day_sec tod);
+    year_month_day PrevMonth(year_month_day ymd);
+	
+    year_month_day AddDay(year_month_day ymd, date::days d);
 
 	
 	bool IsDayOfWeekAllowed(const sys_days& dayPoint);

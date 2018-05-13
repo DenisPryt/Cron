@@ -47,6 +47,12 @@ std::chrono::system_clock::time_point Expression::NextTime(const std::chrono::sy
 }
 
 
+std::chrono::system_clock::time_point Expression::PrevTime(const std::chrono::system_clock::time_point& from)
+{
+    return TimeCalculator{m_masks}.Prev(from);
+}
+    
+
 bool Expression::IsEmpty() const noexcept
 {
 	return m_masks.IsEmpty();

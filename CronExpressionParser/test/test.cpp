@@ -22,12 +22,15 @@ void check_next(const char* pattern, const char* initial, const char* expected)
 	{
 		Expression expr = Expression::ParseCronExpression(pattern);
 		auto nextTime = expr.NextTime(initialTime);
-
 		//std::cout << to_simple_string(time_from_string(initial)) << std::endl;
 		//std::cout << to_simple_string(time_from_string(expected)) << std::endl;
 		//std::cout << to_simple_string(from_time_t(system_clock::to_time_t(nextTime))) << std::endl;
 		
-		std::cout << pattern << (expectedTime == nextTime ? " OK" : " FAIL") << std::endl;
+		std::cout << pattern << " Next " << (expectedTime == nextTime ? " OK" : " FAIL") << std::endl;
+        
+        auto prevTime = expr.PrevTime(expectedTime);
+    
+        std::cout << pattern << " Prev " << (initialTime == prevTime ? " OK" : " FAIL") << std::endl;
 	}
 	catch (const std::exception& ex)
 	{

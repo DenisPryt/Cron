@@ -21,6 +21,7 @@ public:
 	static Expression ParseCronExpression(const std::string_view& cronExpr);
 
 	std::chrono::system_clock::time_point NextTime(const std::chrono::system_clock::time_point& from);
+    std::chrono::system_clock::time_point PrevTime(const std::chrono::system_clock::time_point& from);
 
 	bool IsEmpty() const noexcept;
 
