@@ -2,7 +2,7 @@
 
 #include <date/date.h>
 #include <iostream>
-#include <boost/date_time/posix_time/posix_time.hpp>
+//#include <boost/date_time/posix_time/posix_time.hpp>
 
 
 void CheckNext(const char* pattern, const char* initial, const char* expected)
@@ -10,8 +10,6 @@ void CheckNext(const char* pattern, const char* initial, const char* expected)
 	using namespace Cron;
 	using namespace std::string_literals;
 	using namespace std::chrono;
-	using namespace boost::posix_time;
-
 
 	std::stringstream ssInitial{initial};
 	system_clock::time_point initialTime;
@@ -39,7 +37,7 @@ void CheckPrev(const char* pattern, const char* initial, const char* expected)
 	using namespace Cron;
 	using namespace std::string_literals;
 	using namespace std::chrono;
-	using namespace boost::posix_time;
+	//using namespace boost::posix_time;
 
 
 	std::stringstream ssInitial{initial};
@@ -57,9 +55,9 @@ void CheckPrev(const char* pattern, const char* initial, const char* expected)
 		auto prevTime = expr.PrevTime(initialTime);
 		std::cout << pattern << " Prev " << (expectedTime == prevTime ? " OK" : " FAIL") << std::endl;
 
-		std::cout << to_simple_string(time_from_string(initial)) << std::endl;
-		std::cout << to_simple_string(time_from_string(expected)) << std::endl;
-		std::cout << to_simple_string(from_time_t(system_clock::to_time_t(prevTime))) << std::endl;
+		//std::cout << to_simple_string(time_from_string(initial)) << std::endl;
+		//std::cout << to_simple_string(time_from_string(expected)) << std::endl;
+		//std::cout << to_simple_string(from_time_t(system_clock::to_time_t(prevTime))) << std::endl;
 	}
 	catch (const std::exception& ex)
 	{
