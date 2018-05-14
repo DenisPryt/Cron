@@ -118,20 +118,33 @@ void ParserPrivate::SetBits(uint32_t field, uint32_t valFrom, uint32_t valTo, co
 		break;
 
 	case FieldDaysOfWeek:
-		if (valFrom == 0)
-			::SetBits(m_masks.DaysOfWeek, field, 7, 7, 1);
-
 		if (spec.symbol == L)
 		{
+			if (valFrom == 0)
+				::SetBits(m_masks.DaysOfWeekLast, field, 7, 7, 1);
+			else if (valTo == 7)
+				::SetBits(m_masks.DaysOfWeekLast, field, 0, 0, 1);
+
 			::SetBits(m_masks.DaysOfWeekLast, field, valFrom, valTo, step);
 		}
 		else if (spec.symbol == Hash)
 		{
-			uint32_t offset = 7u * (spec.value - 1u);
+			uint32_t offset = 8u * (spec.value - 1u);
+			
+			if (valFrom == 0)
+				::SetBits(m_masks.DaysOfWeekIndex, field, 7 + offset, 7 + offset, 1);
+			else if (valTo == 7)
+				::SetBits(m_masks.DaysOfWeekIndex, field, 0 + offset, 0 + offset, 1);
+
 			::SetBits(m_masks.DaysOfWeekIndex, field, valFrom + offset, valTo + offset, step);
 		}
 		else
 		{
+			if (valFrom == 0)
+				::SetBits(m_masks.DaysOfWeek, field, 7, 7, 1);
+			else if (valTo == 7)
+				::SetBits(m_masks.DaysOfWeek, field, 0, 0, 1);
+
 			::SetBits(m_masks.DaysOfWeek, field, valFrom, valTo, step);
 		}
 		break;

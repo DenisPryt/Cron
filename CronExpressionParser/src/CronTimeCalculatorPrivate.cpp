@@ -202,7 +202,7 @@ bool TimeCalculator::IsDayOfWeekAllowed(const sys_days& dayPoint) const
 
 	return m_masks.DaysOfWeek[(unsigned)ymw.weekday()] ||
 		(m_masks.DaysOfWeekLast[(unsigned)ymwl.weekday()] && sys_days{ymwl} == dayPoint) ||
-		m_masks.DaysOfWeekIndex[(unsigned)ymwl.weekday() + (7u * (ymw.index() - 1u))];
+		m_masks.DaysOfWeekIndex[(unsigned)ymw.weekday() + (8u * (ymw.index() - 1u))];
 }
 
 
