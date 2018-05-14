@@ -31,4 +31,8 @@
 *.out
 *.app
 
+# XCode
 **/.DS_Store
+
+# VS
+/CronExpressionParser/CronExpressionParser_vs/.vs
