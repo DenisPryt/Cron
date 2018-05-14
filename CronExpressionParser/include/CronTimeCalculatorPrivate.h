@@ -30,18 +30,20 @@ public:
 	sys_time_t Prev(const sys_time_t& from);
 
 	
-	time_of_day_sec NextTimeOfDay(time_of_day_sec tod);
+	seconds NextTimeOfDay(time_of_day_sec tod);
     year_month_day NextMonth(year_month_day ymd);
     
-    time_of_day_sec PrevTimeOfDay(time_of_day_sec tod);
+    seconds PrevTimeOfDay(time_of_day_sec tod);
     year_month_day PrevMonth(year_month_day ymd);
 	
     year_month_day AddDay(year_month_day ymd, date::days d);
 
-	
-	bool IsDayOfWeekAllowed(const sys_days& dayPoint);
-	bool IsDayOfMonthAllowed(const year_month_day& ymd);
-	bool IsDayOfMonthAllowed(const sys_days& dayPoint);
+	bool IsTimeOfDayAllowed(const time_of_day_sec& tod) const;
+	bool IsYearDayMonthAllowed(const year_month_day& ymd) const;
+
+	bool IsDayOfWeekAllowed(const sys_days& dayPoint) const;
+	bool IsDayOfMonthAllowed(const year_month_day& ymd) const;
+	bool IsDayOfMonthAllowed(const sys_days& dayPoint) const;
 
 private:
 	SheduleMasks& m_masks;

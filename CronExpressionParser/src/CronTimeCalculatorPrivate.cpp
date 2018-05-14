@@ -22,24 +22,26 @@ auto TimeCalculator::Next(const sys_time_t& from) -> sys_time_t
 
 	const sys_days nowDays = floor<days>(from);
 
-	sys_duration addTime = NextTimeOfDay(make_time(floor<seconds>(from - nowDays + 1s))).to_duration();
+	sys_duration addTime = NextTimeOfDay(make_time(floor<seconds>(from - nowDays + 1s)));
 
 	auto ymd = year_month_day{floor<days>(nowDays + addTime)};
 
-	while (!m_masks.Months[(unsigned)ymd.month()] ||
-		   !(IsDayOfWeekAllowed(sys_days{ymd}) && IsDayOfMonthAllowed(ymd)))
+	if (!IsYearDayMonthAllowed(ymd))
 	{
-		ymd = NextMonth(ymd);
-        ymd = AddDay(ymd, date::days{+1});
+		do
+		{
+			ymd = NextMonth(ymd);
+			ymd = AddDay(ymd, days{+1});
 
-		if (sys_days{ymd} - from > years{5})
-			return {};
+			if (sys_days{ymd} - from > years{5})
+				return {};
+
+		} while (!IsYearDayMonthAllowed(ymd));
+
+		return sys_days{ymd} + NextTimeOfDay(make_time(0s));
 	}
 
-	if (nowDays != sys_days{ymd})
-		addTime = NextTimeOfDay(make_time(0s)).to_duration();
-
-	return sys_days{ymd} + addTime;
+	return nowDays + addTime;
 }
 
 
@@ -50,32 +52,32 @@ auto TimeCalculator::Prev(const sys_time_t& from) -> sys_time_t
     
     const sys_days nowDays = floor<days>(from);
     
-    sys_duration subTime = PrevTimeOfDay(make_time(floor<seconds>(from - nowDays - 1s))).to_duration();
+    sys_duration addTime = PrevTimeOfDay(make_time(floor<seconds>(from - nowDays - 1s)));
     
-    auto ymd = year_month_day{floor<days>(nowDays - subTime)};
+    auto ymd = year_month_day{floor<days>(nowDays + addTime)};
     
-    while (!m_masks.Months[(unsigned)ymd.month()] ||
-           !(IsDayOfWeekAllowed(sys_days{ymd}) && IsDayOfMonthAllowed(ymd)))
-    {
-        ymd = PrevMonth(ymd);
-        ymd = AddDay(ymd, date::days{-1});
+	if (!IsYearDayMonthAllowed(ymd))
+	{
+		do
+		{
+			ymd = PrevMonth(ymd);
+			ymd = AddDay(ymd, days{-1});
+
+			if (from - sys_days{ymd} > years{5})
+				return {};
+
+		} while (!IsYearDayMonthAllowed(ymd));
+
+		return sys_days{ymd} + PrevTimeOfDay(make_time(24h - 1s));
+	}
         
-        if (from - sys_days{ymd} > years{5})
-            return {};
-    }
-    
-    if (nowDays != sys_days{ymd})
-        subTime = PrevTimeOfDay(make_time(24h - 1s)).to_duration();
-        
-    return sys_days{ymd} - subTime;
+    return nowDays + addTime;
 }
 
 
-auto TimeCalculator::NextTimeOfDay(time_of_day_sec tod) -> time_of_day_sec
+auto TimeCalculator::NextTimeOfDay(time_of_day_sec tod) -> seconds
 {
-	while (!m_masks.Seconds[(size_t)tod.seconds().count()] ||
-		   !m_masks.Minutes[(size_t)tod.minutes().count()] ||
-		   !m_masks.Hours[tod.hours().count() % 24])
+	while (!IsTimeOfDayAllowed(tod))
 	{
 		while (!m_masks.Seconds[(size_t)tod.seconds().count()])
 		{
@@ -86,16 +88,23 @@ auto TimeCalculator::NextTimeOfDay(time_of_day_sec tod) -> time_of_day_sec
 		{
 			auto nextMin = tod.minutes() < 59min ? tod.minutes() + 1min : 0min;
 			auto nextHour = tod.minutes() < 59min ? tod.hours() : tod.hours() + 1h;
+
+			//if (nextHour > 48h)
+			//	throw std::runtime_error("Next time calculate loop");
+
 			tod = make_time(nextHour, nextMin, 0s, 0);
 		}
 
 		while (!m_masks.Hours[tod.hours().count() % 24])
 		{
+			//if (tod.hours() >= 48h)
+			//	throw std::runtime_error("Next time calculate loop");
+
 			tod = make_time(tod.hours() + 1h, 0min, 0s, 0);
 		}
 	}
 
-	return tod;
+	return tod.to_duration();
 }
 
 
@@ -104,20 +113,18 @@ auto TimeCalculator::NextMonth(year_month_day ymd) -> year_month_day
 	while (!m_masks.Months[(unsigned)ymd.month()])
 	{
 		ymd += months{1};
-
-		if (!ymd.ok())
-			ymd = ymd.year() / ymd.month() / 1;
+		ymd = ymd.year() / ymd.month() / 1;
 	}
 
 	return ymd;
 }
 
     
-auto TimeCalculator::PrevTimeOfDay(time_of_day_sec tod) -> time_of_day_sec
+auto TimeCalculator::PrevTimeOfDay(time_of_day_sec tod) -> seconds
 {
-    while (!m_masks.Seconds[(size_t)tod.seconds().count()] ||
-           !m_masks.Minutes[(size_t)tod.minutes().count()] ||
-           !m_masks.Hours[tod.hours().count() % 24])
+	tod = make_time(tod.to_duration() + 24h);
+	
+	while (!IsTimeOfDayAllowed(tod))
     {
         while (!m_masks.Seconds[(size_t)tod.seconds().count()])
         {
@@ -128,16 +135,23 @@ auto TimeCalculator::PrevTimeOfDay(time_of_day_sec tod) -> time_of_day_sec
         {
             auto prevMin = tod.minutes() > 0min ? tod.minutes() - 1min : 59min;
             auto prevHour = tod.minutes() > 0min ? tod.hours() : tod.hours() - 1h;
-            tod = make_time(prevHour, prevMin, 0s, 0);
+
+			//if (prevHour < 0h)
+			//	throw std::runtime_error("Previous time calculate loop");
+
+            tod = make_time(prevHour, prevMin, 59s, 0);
         }
         
         while (!m_masks.Hours[tod.hours().count() % 24])
         {
-            tod = make_time(tod.hours() - 1h, 0min, 0s, 0);
+			//if (tod.hours() <= 0h)
+			//	throw std::runtime_error("Previous time calculate loop");
+
+			tod = make_time(tod.hours() - 1h, 59min, 59s, 0);
         }
     }
         
-    return tod;
+    return tod.to_duration() - 24h;
 }
 
 
@@ -146,9 +160,7 @@ auto TimeCalculator::PrevMonth(year_month_day ymd) -> year_month_day
     while (!m_masks.Months[(unsigned)ymd.month()])
     {
         ymd -= months{1};
-        
-        if (!ymd.ok())
-            ymd = ymd.year() / ymd.month() / last;
+		ymd = ymd.year() / ymd.month() / last;
     }
     
     return ymd;
@@ -168,7 +180,22 @@ auto TimeCalculator::AddDay(year_month_day ymd, date::days d) -> year_month_day
 }
 
 
-bool TimeCalculator::IsDayOfWeekAllowed(const sys_days& dayPoint)
+bool TimeCalculator::IsTimeOfDayAllowed(const time_of_day_sec& tod) const
+{
+	return m_masks.Seconds[(size_t)tod.seconds().count()] &&
+		m_masks.Minutes[(size_t)tod.minutes().count()] &&
+		m_masks.Hours[tod.hours().count() % 24];
+}
+
+
+bool TimeCalculator::IsYearDayMonthAllowed(const year_month_day& ymd) const
+{
+	return m_masks.Months[(unsigned)ymd.month()] &&
+		(IsDayOfWeekAllowed(sys_days{ymd}) && IsDayOfMonthAllowed(ymd));
+}
+
+
+bool TimeCalculator::IsDayOfWeekAllowed(const sys_days& dayPoint) const
 {
 	year_month_weekday ymw{dayPoint};
 	year_month_weekday_last ymwl = ymw.year() / ymw.month() / ymw.weekday()[last];
@@ -179,14 +206,14 @@ bool TimeCalculator::IsDayOfWeekAllowed(const sys_days& dayPoint)
 }
 
 
-bool TimeCalculator::IsDayOfMonthAllowed(const year_month_day& ymd)
+bool TimeCalculator::IsDayOfMonthAllowed(const year_month_day& ymd) const
 {
 	return m_masks.DaysOfMonth[(unsigned)ymd.day()] ||
 		(m_masks.DaysOfMonth[SheduleMasks::LastDayOfMonthBit] && ymd == (ymd.year() / ymd.month() / last));
 }
 
 
-bool TimeCalculator::IsDayOfMonthAllowed(const sys_days& dayPoint)
+bool TimeCalculator::IsDayOfMonthAllowed(const sys_days& dayPoint) const
 {
 	return IsDayOfMonthAllowed(year_month_day{dayPoint});
 }
