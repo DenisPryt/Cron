@@ -35,6 +35,7 @@
 **/.DS_Store
 
 # VS
+*.vcxproj.user
 /CronExpressionParser/CronExpressionParser_vs/.vs
 /CronExpressionParser/CronExpressionParser_vs/x64
 /CronExpressionParser/CronExpressionParser_vs/Win32
