@@ -58,5 +58,4 @@ bool Expression::IsEmpty() const noexcept
 	return m_masks.IsEmpty();
 }
 
-
 }
